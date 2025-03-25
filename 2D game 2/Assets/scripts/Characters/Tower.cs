@@ -13,7 +13,7 @@ public class Tower : CharacterBase
     // Update is called once per frame
     void Update()
     {
-        
+        DisplayHealth();
     }
 
     private void OnCollisionStay2D(Collision2D collision)

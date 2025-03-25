@@ -27,6 +27,7 @@ public class Enermy : CharacterBase
     // Update is called once per frame
     void Update()
     {
+        DisplayHealth();
         manager = FindObjectOfType<GameManager>();
         thisObject.transform.position += new Vector3(xDir, yDir, 0) * speed;
         reverseTime += Time.deltaTime;
