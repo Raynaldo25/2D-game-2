@@ -38,14 +38,22 @@ public class Enermy : CharacterBase
             yDir = yDir * -1;
         }
 
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "bomb")
+        if(other.tag == "bullet")
         {
-            health = health - 5;
+            
             Destroy(other.gameObject);
+            health = health - 5;
         }
     }
+
+    
+    
 }

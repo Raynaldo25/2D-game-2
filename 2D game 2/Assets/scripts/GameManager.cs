@@ -9,10 +9,14 @@ public class GameManager : MonoBehaviour
     public float enemyTimer = 0f;
     public float spawnInterval = 1f;
 
+    public float enemy2Timer = 0f;
+    public float spawnInterval2 = 1f;
+
     public Vector2 xBounds;
     public Vector2 yBounds;
 
     public GameObject enemy;
+    public GameObject enemy2;
 
     private void Awake()
     {
@@ -36,12 +40,19 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         enemyTimer += Time.deltaTime;
+        enemy2Timer += Time.deltaTime;
         Vector3 targetPos = new Vector3(Random.Range(xBounds.x, xBounds.y), Random.Range(yBounds.x, yBounds.y), 0);
 
         if (enemyTimer >= spawnInterval)
         {
             enemyTimer = 0;
             Instantiate(enemy, targetPos, Quaternion.identity);
+        }
+
+        if (enemy2Timer >= spawnInterval2)
+        {
+            enemy2Timer = 0;
+            Instantiate(enemy2, targetPos, Quaternion.identity);
         }
     }
 }
