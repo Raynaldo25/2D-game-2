@@ -362,10 +362,13 @@ MonoBehaviour:
   spawnInterval: 2
   enemy2Timer: 0
   spawnInterval2: 4
+  towerTimer: 0
+  towerInterval: 7
   xBounds: {x: -15.42, y: 15.48}
   yBounds: {x: -9.44, y: 9.56}
   enemy: {fileID: 5728573595487853904, guid: b6b2fb310e8649748b9522a9423c7b0e, type: 3}
   enemy2: {fileID: 6682342870746358841, guid: 9b6c2e90590a838459ee83612a70e955, type: 3}
+  tower: {fileID: 4226865291109322096, guid: 2525a42c9af327a45a565cd3e9bd6b91, type: 3}
 --- !u!4 &1937537252
 Transform:
   m_ObjectHideFlags: 0

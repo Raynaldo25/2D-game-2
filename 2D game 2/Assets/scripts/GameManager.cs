@@ -12,11 +12,15 @@ public class GameManager : MonoBehaviour
     public float enemy2Timer = 0f;
     public float spawnInterval2 = 1f;
 
+    public float towerTimer = 0f;
+    public float towerInterval = 1f;
+
     public Vector2 xBounds;
     public Vector2 yBounds;
 
     public GameObject enemy;
     public GameObject enemy2;
+    public GameObject tower;
 
     private void Awake()
     {
@@ -41,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         enemyTimer += Time.deltaTime;
         enemy2Timer += Time.deltaTime;
+        towerTimer += Time.deltaTime;
         Vector3 targetPos = new Vector3(Random.Range(xBounds.x, xBounds.y), Random.Range(yBounds.x, yBounds.y), 0);
 
         if (enemyTimer >= spawnInterval)
@@ -53,6 +58,12 @@ public class GameManager : MonoBehaviour
         {
             enemy2Timer = 0;
             Instantiate(enemy2, targetPos, Quaternion.identity);
+        }
+
+        if (towerTimer >= towerInterval)
+        {
+            towerTimer = 0;
+            Instantiate(tower, targetPos, Quaternion.identity);
         }
     }
 }
